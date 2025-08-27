@@ -1,0 +1,17 @@
+../Core/Src/mng/can_mng.c:196:13:callback_timer	24	static
+../Core/Src/mng/can_mng.c:205:17:mbox_rx_proc	72	static
+../Core/Src/mng/can_mng.c:245:13:recv_func	24	static
+../Core/Src/mng/can_mng.c:267:13:send_func	48	static,ignoring_inline_asm
+../Core/Src/mng/can_mng.c:301:13:sts_update	24	static
+../Core/Src/mng/can_mng.c:334:13:periodic_func	16	static
+../Core/Src/mng/can_mng.c:360:13:active_func	32	static
+../Core/Src/mng/can_mng.c:403:13:inactive_func	24	static
+../Core/Src/mng/can_mng.c:430:13:sleep_func	24	static
+../Core/Src/mng/can_mng.c:483:13:CanMngTask	40	static
+../Core/Src/mng/can_mng.c:512:6:can_mng_init	56	static
+../Core/Src/mng/can_mng.c:540:10:can_mng_active	16	static
+../Core/Src/mng/can_mng.c:549:10:can_mng_inactive	16	static
+../Core/Src/mng/can_mng.c:559:10:can_mng_sleep	32	static
+../Core/Src/mng/can_mng.c:585:10:can_mng_get_recv_data	24	static
+../Core/Src/mng/can_mng.c:602:10:can_mng_get_send_data	24	static
+../Core/Src/mng/can_mng.c:618:10:can_mng_reg_recv_callback	24	static

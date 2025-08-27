@@ -1,0 +1,9 @@
+../Core/Src/peri/can.c:16:10:can_open	16	static
+../Core/Src/peri/can.c:22:10:can_set_mailbox	16	static
+../Core/Src/peri/can.c:29:10:can_start	16	static
+../Core/Src/peri/can.c:35:10:can_stop	16	static
+../Core/Src/peri/can.c:41:10:can_sleep	16	static
+../Core/Src/peri/can.c:47:10:can_send	24	static
+../Core/Src/peri/can.c:53:10:can_rx_check	16	static
+../Core/Src/peri/can.c:59:10:can_recv	24	static
+../Core/Src/peri/can.c:65:10:can_get_status	16	static

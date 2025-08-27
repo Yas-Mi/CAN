@@ -1,0 +1,12 @@
+../Core/Src/peri/spi.c:63:6:spi_common_handler	32	static
+../Core/Src/peri/spi.c:142:6:SPI2_IRQHandler	8	static
+../Core/Src/peri/spi.c:156:17:calc_br	32	static
+../Core/Src/peri/spi.c:183:17:spi_config	24	static
+../Core/Src/peri/spi.c:228:13:spi_enable	16	static
+../Core/Src/peri/spi.c:235:13:spi_disable	24	static
+../Core/Src/peri/spi.c:260:10:spi_init	16	static
+../Core/Src/peri/spi.c:280:10:spi_open	24	static
+../Core/Src/peri/spi.c:317:10:spi_close	16	static
+../Core/Src/peri/spi.c:325:10:spi_send_recv	48	static
+../Core/Src/peri/spi.c:406:10:spi_nss_on	24	static
+../Core/Src/peri/spi.c:429:10:spi_nss_off	24	static

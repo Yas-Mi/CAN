@@ -1,0 +1,7 @@
+../Core/Src/drv/usart_drv.c:44:6:usart_recv_callback	24	static
+../Core/Src/drv/usart_drv.c:55:6:usart_send_callback	24	static
+../Core/Src/drv/usart_drv.c:66:6:usart_err_callback	24	static
+../Core/Src/drv/usart_drv.c:73:10:usart_drv_init	16	static
+../Core/Src/drv/usart_drv.c:92:10:usart_drv_open	40	static
+../Core/Src/drv/usart_drv.c:127:9:usart_drv_send	56	static
+../Core/Src/drv/usart_drv.c:201:9:usart_drv_recv	56	static

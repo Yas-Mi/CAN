@@ -1,0 +1,4 @@
+../Core/Src/app/standby_app.c:39:6:user_btn_callback	24	static
+../Core/Src/app/standby_app.c:51:13:go_standby	16	static
+../Core/Src/app/standby_app.c:93:6:StandbyTask	40	static
+../Core/Src/app/standby_app.c:122:6:standby_app_init	48	static
