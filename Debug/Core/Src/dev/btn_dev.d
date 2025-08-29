@@ -46,7 +46,8 @@ Core/Src/dev/btn_dev.o: ../Core/Src/dev/btn_dev.c \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h \
- C:/work/CAN/Core/Src/app/console.h ../Core/Src/dev/btn_dev.h
+ C:/Users/user/OneDrive/Desktop/CAN/CAN/Core/Src/app/console.h \
+ ../Core/Src/dev/btn_dev.h
 ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f7xx.h:
 ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f769xx.h:
 ../Drivers/CMSIS/Include/core_cm7.h:
@@ -94,5 +95,5 @@ Core/Src/dev/btn_dev.o: ../Core/Src/dev/btn_dev.c \
 ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h:
-C:/work/CAN/Core/Src/app/console.h:
+C:/Users/user/OneDrive/Desktop/CAN/CAN/Core/Src/app/console.h:
 ../Core/Src/dev/btn_dev.h:

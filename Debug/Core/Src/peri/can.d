@@ -47,7 +47,7 @@ Core/Src/peri/can.o: ../Core/Src/peri/can.c \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h \
  ../Core/Src/peri/iodefine.h ../Core/Src/peri/can.h \
- C:/work/CAN/Core/Src/drv/can_common.h
+ C:/Users/user/OneDrive/Desktop/CAN/CAN/Core/Src/drv/can_common.h
 ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f7xx.h:
 ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f769xx.h:
 ../Drivers/CMSIS/Include/core_cm7.h:
@@ -97,4 +97,4 @@ Core/Src/peri/can.o: ../Core/Src/peri/can.c \
 ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h:
 ../Core/Src/peri/iodefine.h:
 ../Core/Src/peri/can.h:
-C:/work/CAN/Core/Src/drv/can_common.h:
+C:/Users/user/OneDrive/Desktop/CAN/CAN/Core/Src/drv/can_common.h:

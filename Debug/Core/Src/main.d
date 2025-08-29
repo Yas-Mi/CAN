@@ -46,12 +46,16 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h \
- C:/work/CAN/Core/Src/peri/spi.h C:/work/CAN/Core/Src/dev/mcp2515.h \
- C:/work/CAN/Core/Src/drv/can_common.h C:/work/CAN/Core/Src/dev/btn_dev.h \
- C:/work/CAN/Core/Src/drv/usart_drv.h C:/work/CAN/Core/Src/drv/can_drv.h \
- C:/work/CAN/Core/Src/mng/can_mng.h C:/work/CAN/Core/Src/app/console.h \
- C:/work/CAN/Core/Src/app/can_app.h \
- C:/work/CAN/Core/Src/app/standby_app.h
+ C:/Users/user/OneDrive/Desktop/CAN/CAN/Core/Src/peri/spi.h \
+ C:/Users/user/OneDrive/Desktop/CAN/CAN/Core/Src/dev/mcp2515.h \
+ C:/Users/user/OneDrive/Desktop/CAN/CAN/Core/Src/drv/can_common.h \
+ C:/Users/user/OneDrive/Desktop/CAN/CAN/Core/Src/dev/btn_dev.h \
+ C:/Users/user/OneDrive/Desktop/CAN/CAN/Core/Src/drv/usart_drv.h \
+ C:/Users/user/OneDrive/Desktop/CAN/CAN/Core/Src/drv/can_drv.h \
+ C:/Users/user/OneDrive/Desktop/CAN/CAN/Core/Src/mng/can_mng.h \
+ C:/Users/user/OneDrive/Desktop/CAN/CAN/Core/Src/app/console.h \
+ C:/Users/user/OneDrive/Desktop/CAN/CAN/Core/Src/app/can_app.h \
+ C:/Users/user/OneDrive/Desktop/CAN/CAN/Core/Src/app/standby_app.h
 ../Core/Inc/main.h:
 ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:
 ../Core/Inc/stm32f7xx_hal_conf.h:
@@ -100,13 +104,13 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h:
-C:/work/CAN/Core/Src/peri/spi.h:
-C:/work/CAN/Core/Src/dev/mcp2515.h:
-C:/work/CAN/Core/Src/drv/can_common.h:
-C:/work/CAN/Core/Src/dev/btn_dev.h:
-C:/work/CAN/Core/Src/drv/usart_drv.h:
-C:/work/CAN/Core/Src/drv/can_drv.h:
-C:/work/CAN/Core/Src/mng/can_mng.h:
-C:/work/CAN/Core/Src/app/console.h:
-C:/work/CAN/Core/Src/app/can_app.h:
-C:/work/CAN/Core/Src/app/standby_app.h:
+C:/Users/user/OneDrive/Desktop/CAN/CAN/Core/Src/peri/spi.h:
+C:/Users/user/OneDrive/Desktop/CAN/CAN/Core/Src/dev/mcp2515.h:
+C:/Users/user/OneDrive/Desktop/CAN/CAN/Core/Src/drv/can_common.h:
+C:/Users/user/OneDrive/Desktop/CAN/CAN/Core/Src/dev/btn_dev.h:
+C:/Users/user/OneDrive/Desktop/CAN/CAN/Core/Src/drv/usart_drv.h:
+C:/Users/user/OneDrive/Desktop/CAN/CAN/Core/Src/drv/can_drv.h:
+C:/Users/user/OneDrive/Desktop/CAN/CAN/Core/Src/mng/can_mng.h:
+C:/Users/user/OneDrive/Desktop/CAN/CAN/Core/Src/app/console.h:
+C:/Users/user/OneDrive/Desktop/CAN/CAN/Core/Src/app/can_app.h:
+C:/Users/user/OneDrive/Desktop/CAN/CAN/Core/Src/app/standby_app.h:

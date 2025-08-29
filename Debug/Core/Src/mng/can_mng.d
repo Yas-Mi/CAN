@@ -46,8 +46,10 @@ Core/Src/mng/can_mng.o: ../Core/Src/mng/can_mng.c \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h \
- C:/work/CAN/Core/Src/app/console.h C:/work/CAN/Core/Src/drv/can_common.h \
- C:/work/CAN/Core/Src/drv/can_drv.h ../Core/Src/mng/can_mng.h
+ C:/Users/user/OneDrive/Desktop/CAN/CAN/Core/Src/app/console.h \
+ C:/Users/user/OneDrive/Desktop/CAN/CAN/Core/Src/drv/can_common.h \
+ C:/Users/user/OneDrive/Desktop/CAN/CAN/Core/Src/drv/can_drv.h \
+ ../Core/Src/mng/can_mng.h
 ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f7xx.h:
 ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f769xx.h:
 ../Drivers/CMSIS/Include/core_cm7.h:
@@ -95,7 +97,7 @@ Core/Src/mng/can_mng.o: ../Core/Src/mng/can_mng.c \
 ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h:
-C:/work/CAN/Core/Src/app/console.h:
-C:/work/CAN/Core/Src/drv/can_common.h:
-C:/work/CAN/Core/Src/drv/can_drv.h:
+C:/Users/user/OneDrive/Desktop/CAN/CAN/Core/Src/app/console.h:
+C:/Users/user/OneDrive/Desktop/CAN/CAN/Core/Src/drv/can_common.h:
+C:/Users/user/OneDrive/Desktop/CAN/CAN/Core/Src/drv/can_drv.h:
 ../Core/Src/mng/can_mng.h:
