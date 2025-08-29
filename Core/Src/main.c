@@ -77,6 +77,7 @@ static const INIT_FUNC init_func[] = {
 };
 static const CMD_FUNC cmd_func[] = {
 	mcp2515_set_cmd,
+	can_drv_set_cmd,
 	can_app_set_cmd,
 };
 /* USER CODE END PV */
