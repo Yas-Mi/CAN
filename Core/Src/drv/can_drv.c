@@ -21,6 +21,9 @@
 #define ST_START			(3)		// 開始状態
 #define ST_MAX				(4)
 
+// マクロ
+#define SEND_RETRY_CNT		(10)	// 送信のリトライ回数
+
 // CHタイプ
 typedef enum {
 	CAN_DRV_CH_TYPE_INTERNAL = 0,	// 内部CAN
@@ -322,6 +325,7 @@ osStatus can_drv_send(CAN_DRV_CH ch, uint32_t mbx_id, CAN_COMMON_FRAME_TYPE fram
 	const CAN_DRV_CH_INFO *p_info;
 	CAN_DRV_SEND send;
 	osStatus ercd;
+	uint8_t retry_cnt = SEND_RETRY_CNT;
 	
 	// パラメータチェック
 	if ((ch >= CAN_DRV_CH_MAX) || 
@@ -346,9 +350,14 @@ osStatus can_drv_send(CAN_DRV_CH ch, uint32_t mbx_id, CAN_COMMON_FRAME_TYPE fram
 	send = can_drv_func_list_tbl[p_info->type]->send;
 	
 	// 送信
-	ercd = send(p_info->ch, mbx_id, frame_type, can_id, p_data, size);
-	if (ercd != osOK) {
-		console_printf("can_drv_send failed\n");
+	while (retry_cnt--) {
+		// 送信
+		ercd = send(p_info->ch, mbx_id, frame_type, can_id, p_data, size);
+		// 送信出来たら終了
+		if (ercd == osOK) {
+			break;
+		}
+		console_printf("can_drv_send failed(%d)\n", retry_cnt);
 	}
 	
 	return ercd;
@@ -466,4 +475,115 @@ osStatus can_drv_get_status(CAN_DRV_CH ch, uint32_t *p_sts)
 	}
 	
 	return ercd;
+}
+
+// コマンド
+static void can_drv_cmd_open(int argc, char *argv[])
+{
+	uint8_t ch;
+	uint32_t ret;
+	
+	// 引数チェック
+	if (argc < 2) {
+		console_printf("can_drv open <ch>\n");
+		return;
+	}
+	
+	// 値設定
+	ch = atoi(argv[2]);
+	
+	// オープン
+	ret = can_drv_open(ch);
+	if (ret != osOK) {
+		console_printf("open error\n");
+		goto EXIT;
+	}
+	
+	console_printf("open success\n");
+	
+EXIT:
+	return;
+	
+}
+
+static void can_drv_cmd_start(int argc, char *argv[])
+{
+	uint8_t ch;
+	uint32_t ret;
+	
+	// 引数チェック
+	if (argc < 2) {
+		console_printf("can_drv open <ch>\n");
+		return;
+	}
+	
+	// 値設定
+	ch = atoi(argv[2]);
+	
+	// オープン
+	ret = can_drv_start(ch);
+	if (ret != osOK) {
+		console_printf("start error\n");
+		goto EXIT;
+	}
+	
+	console_printf("start success\n");
+	
+EXIT:
+	return;
+	
+}
+
+static void can_drv_cmd_send(int argc, char *argv[])
+{
+	uint32_t ret;
+	uint8_t ch;
+	uint8_t mbx_id;
+	uint32_t can_id;
+	uint8_t i;
+	uint8_t data[8];
+	
+	// 引数チェック
+	if (argc < 4) {
+		console_printf("can_drv send <ch> <mbx_id> <can_id>\n");
+		return;
+	}
+	
+	// 値設定
+	ch = atoi(argv[2]);
+	mbx_id = atoi(argv[3]);
+	can_id = atoi(argv[4]);
+	for (i = 0; i < 8; i++) {
+		data[i] = i;
+	}
+	
+	// 送信
+	ret = can_drv_send(ch, mbx_id, CAN_COMMON_FRAME_TYPE_STANDARD, can_id, data, 8);
+	if (ret != osOK) {
+		console_printf("send error\n");
+		goto EXIT;
+	}
+	
+	console_printf("send success\n");
+	
+EXIT:
+	return;
+	
+}
+
+// コマンド設定関数
+void can_drv_set_cmd(void)
+{
+	COMMAND_INFO cmd;
+	
+	// コマンドの設定
+	cmd.input = "can_drv open";
+	cmd.func = can_drv_cmd_open;
+	console_set_command(&cmd);
+	cmd.input = "can_drv start";
+	cmd.func = can_drv_cmd_start;
+	console_set_command(&cmd);
+	cmd.input = "can_drv send";
+	cmd.func = can_drv_cmd_send;
+	console_set_command(&cmd);
 }

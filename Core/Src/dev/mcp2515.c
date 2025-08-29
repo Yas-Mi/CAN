@@ -1228,10 +1228,10 @@ osStatus mcp2515_dev_send(MCP2515_DEV dev, uint32_t mbx_id, CAN_COMMON_FRAME_TYP
 	int32_t timeout = TIMEOUT;
 	osStatus ercd = -1;
 	uint8_t ctrl;
-	uint8_t send_req = 1;
 	
 	// パラメータチェック
 	if ((dev >= MCP2515_DEV_MAX) ||
+		(mbx_id >= MCP2515_DEV_TX_MBX_ID_MAX) ||
 		(frame_type >= CAN_COMMON_FRAME_TYPE_MAX) ||
 		(data == NULL) ||
 		(size == 0)) {
@@ -1252,6 +1252,15 @@ osStatus mcp2515_dev_send(MCP2515_DEV dev, uint32_t mbx_id, CAN_COMMON_FRAME_TYP
 			console_printf("get_free_tx_buf error\n");
 			goto SEND_EXIT;
 		}
+		
+	// メールボックス指定
+	} else {
+		// 指定したメールボックスが空いているかチェック
+		ercd = read_reg(dev, MCP2515_REG_TXBCTRL(mbx_id), &ctrl);
+		if ((ercd != osOK) || ((ctrl & TXB_TXREQ) != 0)) {
+			ercd = osErrorResource;
+			goto SEND_EXIT;
+		}
 	}
 	
 	// データ設定
@@ -1261,36 +1270,25 @@ osStatus mcp2515_dev_send(MCP2515_DEV dev, uint32_t mbx_id, CAN_COMMON_FRAME_TYP
 		goto SEND_EXIT;
 	}
 	
+	// メッセージ送信要求ビットをセット
+	ercd = modify_bit(dev, MCP2515_REG_TXBCTRL(mbx_id), TXB_TXREQ, TXB_TXREQ);
+	if (ercd != osOK) {
+		console_printf("modify_bit error\n");
+		goto SEND_END_PROC;
+	}
+	
 	// 送信完了待ち 
 	while (timeout--) {
-		// 送信要求をする必要があるなら
-		if (send_req != 0) {
-			// 送信要求をクリア
-			send_req = 0;
-			// メッセージ送信要求ビットをセット
-			ercd = modify_bit(dev, MCP2515_REG_TXBCTRL(mbx_id), TXB_TXREQ, TXB_TXREQ);
-			if (ercd != osOK) {
-				console_printf("modify_bit error\n");
-				goto SEND_EXIT;
-			}
-		}
-		
 		// CTRLレジスタ読み込み
 		ercd = read_reg(dev, MCP2515_REG_TXBCTRL(mbx_id), &ctrl);
 		// SPIのエラー発生
 		if (ercd != osOK) {
-			;
+			break;
+			
 		// CANエラー発生
 		} else if ((ctrl & (TXB_MLOA | TXB_TXERR)) != 0) {
-			console_printf("can error occur(0x%x)\n", ctrl);
-			// メッセージ送信要求ビットをクリア
-			ercd = modify_bit(dev, MCP2515_REG_TXBCTRL(mbx_id), TXB_TXREQ, ~TXB_TXREQ);
-			if (ercd != osOK) {
-				console_printf("modify_bit error\n");
-				goto SEND_EXIT;
-			}
-			// 送信要求をセット
-			send_req = 1;
+			ercd = osErrorParameter;
+			break;
 			
 		// ちゃんと送信できた
 		} else if (((ctrl & TXB_TXREQ) == 0)) {
@@ -1304,9 +1302,11 @@ osStatus mcp2515_dev_send(MCP2515_DEV dev, uint32_t mbx_id, CAN_COMMON_FRAME_TYP
 		ercd = osEventTimeout;
 	}
 	
+SEND_END_PROC:
 	// 送信要求をクリアしておく
 	if (ercd != osOK) {
-		ercd = modify_bit(dev, MCP2515_REG_TXBCTRL(mbx_id), TXB_TXREQ, ~TXB_TXREQ);
+		modify_bit(dev, MCP2515_REG_TXBCTRL(mbx_id), TXB_TXREQ, ~TXB_TXREQ);
+		// ★ 送信要求のクリアミスったらどうしましょう
 	}
 	
 SEND_EXIT:
@@ -1576,7 +1576,7 @@ static void mcp2515_cmd_send(int argc, char *argv[])
 	
 	// 引数チェック
 	if (argc < 3) {
-		console_printf("mcp2515 change_bit <mbx_id> <can_id>\n");
+		console_printf("mcp2515 send <mbx_id> <can_id>\n");
 		return;
 	}
 	

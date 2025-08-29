@@ -46,8 +46,9 @@ Core/Src/dev/mcp2515.o: ../Core/Src/dev/mcp2515.c \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h \
- C:/work/CAN/Core/Src/app/console.h C:/work/CAN/Core/Src/peri/spi.h \
- C:/work/CAN/Core/Src/drv/can_common.h ../Core/Src/dev/mcp2515.h
+ C:/work/CAN/CAN/Core/Src/app/console.h \
+ C:/work/CAN/CAN/Core/Src/peri/spi.h \
+ C:/work/CAN/CAN/Core/Src/drv/can_common.h ../Core/Src/dev/mcp2515.h
 ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f7xx.h:
 ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f769xx.h:
 ../Drivers/CMSIS/Include/core_cm7.h:
@@ -95,7 +96,7 @@ Core/Src/dev/mcp2515.o: ../Core/Src/dev/mcp2515.c \
 ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h:
-C:/work/CAN/Core/Src/app/console.h:
-C:/work/CAN/Core/Src/peri/spi.h:
-C:/work/CAN/Core/Src/drv/can_common.h:
+C:/work/CAN/CAN/Core/Src/app/console.h:
+C:/work/CAN/CAN/Core/Src/peri/spi.h:
+C:/work/CAN/CAN/Core/Src/drv/can_common.h:
 ../Core/Src/dev/mcp2515.h:

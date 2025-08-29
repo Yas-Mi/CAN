@@ -46,7 +46,7 @@ Core/Src/app/can_app.o: ../Core/Src/app/can_app.c \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h \
- ../Core/Src/app/console.h C:/work/CAN/Core/Src/mng/can_mng.h \
+ ../Core/Src/app/console.h C:/work/CAN/CAN/Core/Src/mng/can_mng.h \
  ../Core/Src/app/can_app.h
 ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f7xx.h:
 ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f769xx.h:
@@ -96,5 +96,5 @@ Core/Src/app/can_app.o: ../Core/Src/app/can_app.c \
 ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h:
 ../Core/Src/app/console.h:
-C:/work/CAN/Core/Src/mng/can_mng.h:
+C:/work/CAN/CAN/Core/Src/mng/can_mng.h:
 ../Core/Src/app/can_app.h:

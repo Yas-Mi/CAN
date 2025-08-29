@@ -53,6 +53,6 @@ extern osStatus can_drv_rx_check(CAN_DRV_CH ch, uint32_t *p_ret);
 extern osStatus can_drv_recv(CAN_DRV_CH ch, uint32_t mbx_id, uint32_t *p_can_id, uint8_t *p_data, uint8_t *p_size);
 extern osStatus can_drv_get_status(CAN_DRV_CH ch, uint32_t *p_sts);
 
-extern void can_mng_set_cmd(void);
+extern void can_drv_set_cmd(void);
 
 #endif /* CANH_DRV_H_ */

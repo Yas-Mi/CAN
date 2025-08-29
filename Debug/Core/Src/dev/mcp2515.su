@@ -25,7 +25,7 @@
 ../Core/Src/dev/mcp2515.c:1092:10:mcp2515_dev_start	24	static
 ../Core/Src/dev/mcp2515.c:1124:10:mcp2515_dev_stop	24	static
 ../Core/Src/dev/mcp2515.c:1172:10:mcp2515_dev_sleep	24	static
-../Core/Src/dev/mcp2515.c:1225:10:mcp2515_dev_send	56	static
+../Core/Src/dev/mcp2515.c:1225:10:mcp2515_dev_send	48	static
 ../Core/Src/dev/mcp2515.c:1317:10:mcp2515_dev_rx_check	24	static
 ../Core/Src/dev/mcp2515.c:1347:10:mcp2515_dev_get_rx_data	48	static
 ../Core/Src/dev/mcp2515.c:1392:10:mcp2515_dev_get_status	40	static
