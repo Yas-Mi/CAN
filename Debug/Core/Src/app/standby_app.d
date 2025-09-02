@@ -46,10 +46,15 @@ Core/Src/app/standby_app.o: ../Core/Src/app/standby_app.c \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h \
+<<<<<<< HEAD
  ../Core/Src/app/console.h \
  C:/Users/user/OneDrive/Desktop/CAN/CAN/Core/Src/dev/btn_dev.h \
  C:/Users/user/OneDrive/Desktop/CAN/CAN/Core/Src/mng/can_mng.h \
  ../Core/Src/app/standby_app.h
+=======
+ ../Core/Src/app/console.h C:/work/CAN/CAN/Core/Src/dev/btn_dev.h \
+ C:/work/CAN/CAN/Core/Src/mng/can_mng.h ../Core/Src/app/standby_app.h
+>>>>>>> 7b98383d0a153eba3c8ccfa25f6e730fb8e733de
 ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f7xx.h:
 ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f769xx.h:
 ../Drivers/CMSIS/Include/core_cm7.h:
@@ -98,6 +103,11 @@ Core/Src/app/standby_app.o: ../Core/Src/app/standby_app.c \
 ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h:
 ../Core/Src/app/console.h:
+<<<<<<< HEAD
 C:/Users/user/OneDrive/Desktop/CAN/CAN/Core/Src/dev/btn_dev.h:
 C:/Users/user/OneDrive/Desktop/CAN/CAN/Core/Src/mng/can_mng.h:
+=======
+C:/work/CAN/CAN/Core/Src/dev/btn_dev.h:
+C:/work/CAN/CAN/Core/Src/mng/can_mng.h:
+>>>>>>> 7b98383d0a153eba3c8ccfa25f6e730fb8e733de
 ../Core/Src/app/standby_app.h:

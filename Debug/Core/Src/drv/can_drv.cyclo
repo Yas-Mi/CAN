@@ -4,6 +4,7 @@
 ../Core/Src/drv/can_drv.c:202:10:can_drv_start	4
 ../Core/Src/drv/can_drv.c:243:10:can_drv_stop	4
 ../Core/Src/drv/can_drv.c:284:10:can_drv_sleep	4
+<<<<<<< HEAD
 ../Core/Src/drv/can_drv.c:322:10:can_drv_send	7
 ../Core/Src/drv/can_drv.c:362:10:can_drv_rx_check	5
 ../Core/Src/drv/can_drv.c:399:10:can_drv_recv	8
@@ -12,3 +13,13 @@
 ../Core/Src/drv/can_drv.c:504:13:can_drv_cmd_start	3
 ../Core/Src/drv/can_drv.c:532:13:can_drv_cmd_send	4
 ../Core/Src/drv/can_drv.c:570:6:can_drv_set_cmd	1
+=======
+../Core/Src/drv/can_drv.c:322:10:can_drv_send	8
+../Core/Src/drv/can_drv.c:367:10:can_drv_rx_check	5
+../Core/Src/drv/can_drv.c:404:10:can_drv_recv	8
+../Core/Src/drv/can_drv.c:444:10:can_drv_get_status	5
+../Core/Src/drv/can_drv.c:481:13:can_drv_cmd_open	3
+../Core/Src/drv/can_drv.c:509:13:can_drv_cmd_start	3
+../Core/Src/drv/can_drv.c:537:13:can_drv_cmd_send	4
+../Core/Src/drv/can_drv.c:575:6:can_drv_set_cmd	1
+>>>>>>> 7b98383d0a153eba3c8ccfa25f6e730fb8e733de

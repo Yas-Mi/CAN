@@ -69,8 +69,13 @@ all: main-build
 main-build: CAN.elf secondary-outputs
 
 # Tool invocations
+<<<<<<< HEAD
 CAN.elf CAN.map: $(OBJS) $(USER_OBJS) C:\Users\user\OneDrive\Desktop\CAN\CAN\STM32F769NIHX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	arm-none-eabi-gcc -o "CAN.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\Users\user\OneDrive\Desktop\CAN\CAN\STM32F769NIHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CAN.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+=======
+CAN.elf CAN.map: $(OBJS) $(USER_OBJS) C:\work\CAN\CAN\STM32F769NIHX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "CAN.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\work\CAN\CAN\STM32F769NIHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CAN.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+>>>>>>> 7b98383d0a153eba3c8ccfa25f6e730fb8e733de
 	@echo 'Finished building target: $@'
 	@echo ' '
 
