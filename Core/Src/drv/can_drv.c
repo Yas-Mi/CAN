@@ -325,7 +325,6 @@ osStatus can_drv_send(CAN_DRV_CH ch, uint32_t mbx_id, CAN_COMMON_FRAME_TYPE fram
 	const CAN_DRV_CH_INFO *p_info;
 	CAN_DRV_SEND send;
 	osStatus ercd;
-	uint8_t retry_cnt = SEND_RETRY_CNT;
 	
 	// パラメータチェック
 	if ((ch >= CAN_DRV_CH_MAX) || 
@@ -349,21 +348,11 @@ osStatus can_drv_send(CAN_DRV_CH ch, uint32_t mbx_id, CAN_COMMON_FRAME_TYPE fram
 	// 開始関数取得
 	send = can_drv_func_list_tbl[p_info->type]->send;
 	
-<<<<<<< HEAD
+	// 送信
 	ercd = send(p_info->ch, mbx_id, frame_type, can_id, p_data, size);
 	// 送信出来たら終了
 	if (ercd == osOK) {
-=======
-	// 送信
-	while (retry_cnt--) {
-		// 送信
-		ercd = send(p_info->ch, mbx_id, frame_type, can_id, p_data, size);
-		// 送信出来たら終了
-		if (ercd == osOK) {
-			break;
-		}
->>>>>>> 7b98383d0a153eba3c8ccfa25f6e730fb8e733de
-		console_printf("can_drv_send failed(%d)\n", retry_cnt);
+		console_printf("can_drv_send failed\n");
 	}
 	
 	return ercd;
