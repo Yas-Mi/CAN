@@ -8125,11 +8125,10 @@ osStatus can_drv_send(CAN_DRV_CH ch, uint32_t mbx_id, CAN_COMMON_FRAME_TYPE fram
  8003172:	68b9      	ldr	r1, [r7, #8]
  8003174:	47a0      	blx	r4
  8003176:	6138      	str	r0, [r7, #16]
-	// 送信出来たら終了
-	if (ercd == osOK) {
+	if (ercd != osOK) {
  8003178:	693b      	ldr	r3, [r7, #16]
  800317a:	2b00      	cmp	r3, #0
- 800317c:	d102      	bne.n	8003184 <can_drv_send+0x88>
+ 800317c:	d002      	beq.n	8003184 <can_drv_send+0x88>
 		console_printf("can_drv_send failed\n");
  800317e:	4807      	ldr	r0, [pc, #28]	@ (800319c <can_drv_send+0xa0>)
  8003180:	f7fe f8d8 	bl	8001334 <console_printf>

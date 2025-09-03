@@ -350,8 +350,7 @@ osStatus can_drv_send(CAN_DRV_CH ch, uint32_t mbx_id, CAN_COMMON_FRAME_TYPE fram
 	
 	// 送信
 	ercd = send(p_info->ch, mbx_id, frame_type, can_id, p_data, size);
-	// 送信出来たら終了
-	if (ercd == osOK) {
+	if (ercd != osOK) {
 		console_printf("can_drv_send failed\n");
 	}
 	
